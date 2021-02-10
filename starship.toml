@@ -1,0 +1,48 @@
+add_newline = false
+
+format = """\
+$username$hostname$directory$git_branch$git_state$git_status\
+$time$package$python$ruby$rust$golang\
+$line_break\
+$cmd_duration\
+$character\
+"""
+
+
+[username]
+show_always = true
+format = "[$user]($style) on "
+
+[hostname]
+ssh_only = false
+
+[cmd_duration]
+min_time = 1000
+format = "[$duration]($style)"
+
+[directory]
+truncation_length = 10
+
+[time]
+disabled = false
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold blue)"
+use_symbol_for_status = true
+
+[python]
+symbol = "py "
+
+[golang]
+symbol = "go "
+
+[ruby]
+symbol = "rb"
+
+[rust]
+symbol = "rs"
+
+[jobs]
+symbol = "++ "

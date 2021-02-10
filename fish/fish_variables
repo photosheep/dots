@@ -1,0 +1,58 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ANDROID_SDK_HOME:/home/josh/\x2econfig/android
+SETUVAR --export BROWSER:firefox
+SETUVAR --export CRAWL_DIR:/home/josh/\x2elocal/share/crawl
+SETUVAR --export EDITOR:nvim
+SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f
+SETUVAR --export GNUPGHOME:/home/josh/\x2elocal/share/gnupg
+SETUVAR --export GTK2_RC_FILES:/home/josh/\x2econfig/gtk2/gtkrc
+SETUVAR --export GTK_IM_MODULE:ibus
+SETUVAR --export LESSHISTFILE:\x2d
+SETUVAR --export LIBVA_DRIVER_NAME:iHD
+SETUVAR --export PASSWORD_STORE_CLIP_TIME:15
+SETUVAR --export PASSWORD_STORE_DIR:/home/josh/\x2elocal/share/pass
+SETUVAR --export PYLINTHOME:/home/josh/\x2ecache/pylint
+SETUVAR --export QT_IM_MODULE:ibus
+SETUVAR --export QT_QPA_PLATFORMTHEME:gtk2
+SETUVAR --export WGETRC:/home/josh/\x2econfig/wgetrc
+SETUVAR --export XDG_CACHE_HOME:/home/josh/\x2ecache
+SETUVAR --export XDG_CONFIG_HOME:/home/josh/\x2econfig
+SETUVAR --export XDG_DATA_HOME:/home/josh/\x2elocal/share
+SETUVAR --export XMODIFIERS:\x40im\x2dibus
+SETUVAR --export ZSTD_CLEVEL:19
+SETUVAR __fish_init_2_39_8:\x1d
+SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
+SETUVAR fish_color_autosuggestion:969896
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:b294bb
+SETUVAR fish_color_comment:f0c674
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:b294bb
+SETUVAR fish_color_error:cc6666
+SETUVAR fish_color_escape:00a6b2
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:00a6b2
+SETUVAR fish_color_param:81a2be
+SETUVAR fish_color_quote:b5bd68
+SETUVAR fish_color_redirection:8abeb7
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_key_bindings:fish_vi_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/josh/\x2egem/ruby/2\x2e7\x2e0/bin
+SETUVAR grc_plugin_execs:acpi\x1ecat\x1ecvs\x1edf\x1ediff\x1edig\x1egcc\x1eg\x2b\x2b\x1eifconfig\x1emake\x1emount\x1emtr\x1enetstat\x1eping\x1eps\x1etail\x1etraceroute\x1ewdiff\x1eblkid\x1edu\x1ednf\x1edocker\x1edocker\x2dmachine\x1eenv\x1eid\x1eip\x1eiostat\x1elast\x1elsattr\x1elsblk\x1elspci\x1elsmod\x1elsof\x1elsusb\x1egetfacl\x1egetsebool\x1eulimit\x1euptime\x1enmap\x1efdisk\x1efindmnt\x1efree\x1esemanage\x1esar\x1ess\x1esysctl\x1esystemctl\x1estat\x1eshowmount\x1etcpdump\x1etune2fs\x1evmstat\x1ew\x1ewho

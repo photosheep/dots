@@ -1,0 +1,140 @@
+/**
+ * ROFI Color theme
+ * Thanks to Qball for his
+ * very fantastic Arthur
+ * base, for without that
+ * this could have never happened.
+ *
+ * Slapped together by Joshua Smith.
+ */
+
+configuration {
+
+    // The display name of this browser
+    display-ssh:                   "";
+    // The display name of this browser
+    display-run:                    "";
+    // The display name of this browser
+    display-drun:                   "";
+    // The display name of this browser
+    display-window:                 "";
+    display-combi:                  "";
+    show-icons: false;
+    window-format: "{w:1} {t}";
+}
+
+
+* {
+    transparent: rgba(0,0,0,0);
+    color0: rgba(60,60,60,0.90);
+    color4: #ffffff;
+    color7: #ffffff;
+    color10: rgba(90,90,90,0.90);
+    background-color: @transparent;
+    border-color: @color10;
+    highlight:  underline bold #ff50a6;
+    font: "Hack 12";
+}
+
+inputbar,listview,message {
+    background-color: @color0;
+}
+
+window {
+    location: center;
+    anchor:   center;
+    padding: 10px;
+    border:  0px;
+    border-radius: 10px;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+message {
+    border:  0px 2px 2px 2px;
+    padding: 5;
+    font: "Source Code Pro 8";
+    color: @color10;
+}
+
+inputbar {
+    color: @color4;
+    padding: 11px;
+    border: 2px 2px 2px 2px;
+    border-radius:  15px 15px 0px 0px;
+    font: "Source Code Pro 18";
+}
+
+entry,prompt,case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+    vertical-align: 0.5;
+}
+
+prompt {
+    margin:     0px 0.3em 0em 0em ;
+}
+
+listview {
+    padding: 8px;
+    border-radius: 0px 0px 15px 15px;
+    border: 0px 2px 2px 2px;
+    dynamic: false;
+}
+
+element {
+    padding: 6px;
+    vertical-align: 0.5;
+    border-radius: 10px;
+    color: @color7;
+    font:inherit;
+    horizontal-align: 0.5;
+}
+
+element selected normal {
+    background-color: @color10;
+    color: @color7;
+}
+
+element selected active {
+    background-color: @color10;
+}
+
+vertb {
+    expand: false;
+    children: [ dummy0, mode-switcher, dummy1  ];
+}
+
+dummy0,  dummy1 {
+    expand: true;
+}
+
+mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 0px 0px 0px 0px;
+}
+
+button {
+    font: "FontAwesome 22";
+    padding: 6px;
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    color: @color0;
+}
+
+
+
+error-message {
+    expand: true;
+    border: 2px;
+    padding: 1em;
+}
+

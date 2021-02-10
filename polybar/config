@@ -1,0 +1,268 @@
+[bar/top]
+#wm-restack = iw
+monitor = eDP1
+width = 100%
+height = 18
+background = #001e1e1e
+foreground = #e8e8e8
+
+tray-position = right
+tray-detached = left
+
+modules-left = battery1 battery2 cpu temp memory network i3mode
+modules-center = i3
+modules-right = volume time ibus
+
+module-margin-left = 0
+module-margin-right = 0
+
+separator =
+
+font-0 = Hack:size=10;3
+font-1 = SauceCodePro Nerd Font Mono:size=12;4
+font-2 = Source Han Sans CN:weight=bold:size=12;3
+
+[module/i3]
+type=internal/i3
+
+enable-click = true
+enable-scroll = false
+
+strip-wsnumbers = true
+
+format = <label-state>
+
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-foreground = #e8e8e8
+label-mode-background = #1e1e1e
+label-mode-padding = 1
+
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-foreground = #ff50a6
+label-focused-underline = #ff50a6
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-padding = 1
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-foreground = #5a9af8
+label-urgent-underline = #5a9af8
+label-urgent-padding = 1
+
+[module/i3mode]
+type=internal/i3
+
+format = <label-mode>
+
+label-mode-foreground = #e8e8e8
+;label-mode-background = #1e1e1e
+label-mode-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format = %{A1:termite --role=termfloat --exec='btm -C /home/josh/.config/bottom/mini.toml':}<label><ramp-coreload>%{A}
+;format-background = #2e2e2e
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 2
+label = "﬙ "
+
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = #e8e8e8
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = #e8e8e8
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = #e8e8e8
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = #e8e8e8
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = #e8e8e8
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = #ff50a6
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = #ff50a6
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = #ff50a6
+
+[module/memory]
+type = internal/memory
+interval=5
+
+format = <label>
+;format-background = #2e2e2e
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 2
+label =  %gb_used%
+
+ramp-used-0 = ▁
+ramp-used-0-foreground = #e8e8e8
+ramp-used-1 = ▂
+ramp-used-1-foreground = #e8e8e8
+ramp-used-2 = ▃
+ramp-used-2-foreground = #e8e8e8
+ramp-used-3 = ▄
+ramp-used-3-foreground = #e8e8e8
+ramp-used-4 = ▅
+ramp-used-4-foreground = #e8e8e8
+ramp-used-5 = ▆
+ramp-used-5-foreground = #ff50a6
+ramp-used-6 = ▇
+ramp-used-6-foreground = #ff50a6
+ramp-used-7 = █
+ramp-used-7-foreground = #ff50a6
+
+[module/battery1]
+type = internal/battery
+battery = BAT0
+
+format-charging = <animation-charging>
+format-discharging = <ramp-capacity>
+format-full = <ramp-capacity>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #ff0000
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ff0000
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = #f8b85a
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = #5a9af8
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = #5a9af8
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+[module/battery2]
+type = internal/battery
+battery = BAT1
+
+format-charging = <animation-charging>
+format-discharging = <ramp-capacity>
+format-full = <ramp-capacity>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #ff0000
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ff0000
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = #f8b85a
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = #5a9af8
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = #5a9af8
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+[module/temp]
+type = internal/temperature
+interval = 5
+
+thermal-zone = 0
+units = false
+
+format = <label>
+;format-background = #2e2e2e
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 2
+
+format-warn = <label-warn>
+;format-warn-background = #2e2e2e
+label-warn-foreground = #ff0000
+format-warn-overline = #1e1e1e
+;format-warn-underline = #1e1e1e
+format-warn-padding = 2
+
+label =  %temperature-c%°
+label-warn =  %temperature-c%°
+
+[module/time]
+type = custom/script
+exec = date '+ %Y-%m-%d  %H:%M'
+interval = 1
+
+format = <label>
+;format-background = #2e2e2e
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 2
+
+#click-left = $XDG_CONFIG_HOME/polybar/cal_notify &
+
+[module/network]
+type = internal/network
+interface = wlan0
+interval = 5
+;format-connected-background = #2e2e2e
+format-connected-overline = #1e1e1e
+;format-connected-underline = #1e1e1e
+format-connected-padding = 2
+;format-disconnected-background = #2e2e2e
+format-disconnected-overline = #1e1e1e
+;format-disconnected-underline = #1e1e1e
+format-disconnected-padding = 2
+
+label-connected = %{A1:/usr/bin/termite --role=termfloat --exec=nmtui:} %upspeed:0:9%  %downspeed:0:9%%{A}
+label-disconnected = %{A1:/usr/bin/termite --role=termfloat --exec=nmtui:} %upspeed:0:9%  %downspeed:0:9%%{A}
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = <ramp-volume><label-volume>
+label-volume = %percentage:3%%
+format-muted = <label-muted>
+label-muted = 婢 00%
+interval = 5
+use-ui-max = false
+
+;format-volume-background = #2e2e2e
+format-volume-overline = #1e1e1e
+;format-volume-underline = #1e1e1e
+format-volume-padding = 2
+
+;format-muted-background = #2e2e2e
+format-muted-overline = #1e1e1e
+;format-muted-underline = #1e1e1e
+format-muted-padding = 2
+
+ramp-volume-0 = 奔
+ramp-volume-1 = 墳
+
+[module/ibus]
+type = custom/script
+exec = ibus engine | sed 's/.*eng.*/英文/;s/rime/廣東話/;'
+interval = 1
+
+format = <label>
+;format-background = #2e2e2e
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 1
+
+click-left = $XDG_CONFIG_HOME/ibus_toggle.sh &
+
+; vim:ft=dosini

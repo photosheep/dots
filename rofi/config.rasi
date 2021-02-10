@@ -1,0 +1,10 @@
+configuration {
+    modi: "run,window,ssh";
+    width: 40;
+    lines: 8;
+    columns: 2;
+    theme: "plain";
+    terminal: "termite --class=rofi_start";
+    hide-scrollbar: true;
+    window-format: "{w}{t}";
+}

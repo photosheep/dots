@@ -1,0 +1,5 @@
+commands*.py
+scope.sh
+rifle.conf
+colorschemes/__init__.py
+colorschemes/__pycache__

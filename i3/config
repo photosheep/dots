@@ -1,0 +1,178 @@
+# Custom i3 by Joshua Smith
+# Started on Feb 2nd, 2021 for Gwydion.
+# Will be maintained as-needed.
+
+# Autoexec stuff
+exec ~/.config/i3/all.sh
+exec ~/.config/i3/host.sh
+
+
+# Set vars
+
+set $mod Mod4
+
+set $dirL h
+set $dirR l
+set $dirU k
+set $dirD j
+
+set $term termite
+
+set $menu rofi -show run
+set $clip rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
+set $files pcmanfm
+set $capture ~/.config/i3/screenshot.sh
+set $lock xsecurelock
+set $lang ~/.config/ibus_toggle.sh
+
+# Workspace settings
+set $ws1 1:一
+set $ws2 2:二
+set $ws3 3:三
+set $ws4 4:四
+set $ws5 5:五
+set $ws6 6:六
+set $ws7 7:七
+set $ws8 8:八
+set $ws9 9:九
+set $ws10 10:十
+
+# Workspace binds
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+minus scratchpad show
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+Shift+minus move scratchpad
+
+# Set binds
+
+bindsym $mod+Shift+r reload
+bindsym $mod+Mod1+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit i3?' -B 'Yes, please.' 'i3-msg exit'"
+
+bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen
+
+bindsym $mod+i exec $lang
+
+bindsym $mod+$dirL focus left
+bindsym $mod+$dirR focus right
+bindsym $mod+$dirU focus up
+bindsym $mod+$dirD focus down
+
+bindsym $mod+Shift+$dirL move left
+bindsym $mod+Shift+$dirR move right
+bindsym $mod+Shift+$dirU move up
+bindsym $mod+Shift+$dirD move down
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Return exec $term
+bindsym $mod+o exec $files
+bindsym $mod+c exec $capture
+bindsym $mod+Shift+c exec $capture su
+bindsym $mod+BackSpace exec $lock
+bindsym --release $mod+d exec $menu
+bindsym --release $mod+Shift+d exec $clip
+
+bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86AudioRaiseVolume exec pamixer -i 10
+bindsym XF86AudioLowerVolume exec pamixer -d 10
+bindsym XF86AudioMute exec pamixer --sink 0 --toggle-mute
+bindsym XF86AudioMicMute exec pamixer --source 1 --toggle-mute
+
+bindsym $mod+g gaps inner current set 0
+bindsym $mod+Shift+g gaps inner current set 10
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Useful modes
+
+set $mode_size ﭕ
+
+mode "$mode_size" {
+    bindsym $dirL resize shrink width  20px
+    bindsym $dirD resize grow height   20px
+    bindsym $dirU   resize shrink height 20px
+    bindsym $dirR resize grow width   20px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+}
+
+bindsym $mod+r mode "$mode_size"
+
+
+
+# Behavior settings
+
+floating_modifier $mod
+focus_wrapping no
+focus_follows_mouse no
+workspace_auto_back_and_forth no
+
+# Visual settings
+
+title_align center
+smart_gaps inverse_outer
+default_border pixel 2px
+default_floating_border pixel 2px
+gaps inner 10
+
+# Program settings
+
+assign [class="firefox"] $ws1
+assign [class="Chromium"] $ws1
+assign [class="TelegramDesktop"] $ws4
+assign [class="TeamSpeak 3"] $ws4
+assign [class="Fractal"] $ws4
+assign [class="Mumble"] $ws4
+assign [class="mpv"] $ws5
+assign [class="obs"] $ws5
+assign [class="Rawtherapee"] $ws6
+assign [class="Darktable"] $ws6
+assign [class="Gimp"] $ws6
+assign [class="Steam"] $ws7
+assign [class="Transmission"] $ws8
+
+for_window [window_role="termfloat"] floating enable
+
+# Setting colors
+set $col_back "#1e1e1e"
+set $col_gray "#5a5a5a"
+set $col_pink "#ff50a6"
+set $col_vlite "#dedede"
+set $col_urgn "#5a9af8"
+
+#class				        border     backgr     text       ind        child_bord
+client.focused			    $col_back  $col_back  $col_pink  $col_urgn  $col_pink
+client.focused_inactive		$col_back  $col_back  $col_gray  $col_gray  $col_gray
+client.unfocused		    $col_back  $col_back  $col_gray  $col_gray  $col_gray
+client.background		    $col_back
