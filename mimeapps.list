@@ -14,3 +14,4 @@ inode/directory=pcmanfm.desktop
 image/jpeg=imv.desktop
 image/png=imv.desktop
 image/gif=imv.desktop
+image/svg+xml=imv.desktop
