@@ -1,11 +1,10 @@
-# Custom i3 by Joshua Smith
+# Custom i3 by photosheep (github.com/photosheep)
 # Started on Feb 2nd, 2021 for Gwydion.
 # Will be maintained as-needed.
 
 # Autoexec stuff
-exec ~/.config/i3/all.sh
-exec ~/.config/i3/host.sh
-
+exec --no-startup-id ~/.config/i3/all.sh
+exec --no-startup-id ~/.config/i3/host.sh
 
 # Set vars
 
@@ -36,6 +35,9 @@ set $ws7 7:七
 set $ws8 8:八
 set $ws9 9:九
 set $ws10 10:十
+
+# Gap stuff
+set $gapsize 10
 
 # Workspace binds
 
@@ -90,6 +92,13 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+a focus parent
+
+bindsym $mod+bracketleft exec dunstctl close
+bindsym $mod+Shift+bracketleft exec dunstctl close-all
+bindsym $mod+bracketright exec dunstctl history-pop
+bindsym $mod+backslash exec dunstctl set-paused toggle
+bindsym $mod+Shift+Return exec dunstctl action
 
 bindsym $mod+Return exec $term
 bindsym $mod+o exec $files
@@ -106,21 +115,41 @@ bindsym XF86AudioLowerVolume exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer --sink 0 --toggle-mute
 bindsym XF86AudioMicMute exec pamixer --source 1 --toggle-mute
 
-bindsym $mod+g gaps inner current set 0
-bindsym $mod+Shift+g gaps inner current set 10
+bindsym $mod+g gaps inner all toggle $gapsize
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Useful modes
 
-set $mode_size ﭕ
+set $mode_size [SIZE]
+set $mode_cont [CONTROL]
 
 mode "$mode_size" {
     bindsym $dirL resize shrink width  20px
     bindsym $dirD resize grow height   20px
-    bindsym $dirU   resize shrink height 20px
-    bindsym $dirR resize grow width   20px
+    bindsym $dirU resize shrink height 20px
+    bindsym $dirR resize grow width    20px
+    bindsym Left  resize shrink width  80px
+    bindsym Down  resize grow height   80px
+    bindsym Up    resize shrink height 80px
+    bindsym Right resize grow width    80px
+
+    bindsym bracketleft gaps inner all minus $gapsize
+    bindsym bracketright gaps inner all plus $gapsize
+    bindsym g gaps inner all toggle $gapsize
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+}
+
+mode "$mode_cont" {
+    bindsym $dirL exec pamixer -d 10
+    bindsym $dirR exec pamixer -i 10
+    bindsym m exec pamixer --sink 0 --toggle-mute
+    bindsym $dirD exec xbacklight -10
+    bindsym $dirU exec xbacklight +10
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -128,15 +157,15 @@ mode "$mode_size" {
 }
 
 bindsym $mod+r mode "$mode_size"
+bindsym $mod+p mode "$mode_cont"
 
-
-
-# Behavior settings
+#Behavior settings
 
 floating_modifier $mod
 focus_wrapping no
 focus_follows_mouse no
 workspace_auto_back_and_forth no
+#hide_edge_borders smart_no_gaps
 
 # Visual settings
 
@@ -144,7 +173,7 @@ title_align center
 smart_gaps inverse_outer
 default_border pixel 2px
 default_floating_border pixel 2px
-gaps inner 10
+gaps inner $gapsize
 
 # Program settings
 
@@ -154,6 +183,7 @@ assign [class="TelegramDesktop"] $ws4
 assign [class="TeamSpeak 3"] $ws4
 assign [class="Fractal"] $ws4
 assign [class="Mumble"] $ws4
+assign [title="Friends List.*"] $ws4
 assign [class="mpv"] $ws5
 assign [class="obs"] $ws5
 assign [class="Rawtherapee"] $ws6
@@ -164,6 +194,8 @@ assign [class="Transmission"] $ws8
 
 for_window [window_role="termfloat"] floating enable
 
+font pango:Hack 10
+
 # Setting colors
 set $col_back "#1e1e1e"
 set $col_gray "#5a5a5a"
@@ -172,7 +204,7 @@ set $col_vlite "#dedede"
 set $col_urgn "#5a9af8"
 
 #class				        border     backgr     text       ind        child_bord
-client.focused			    $col_back  $col_back  $col_pink  $col_urgn  $col_pink
-client.focused_inactive		$col_back  $col_back  $col_gray  $col_gray  $col_gray
-client.unfocused		    $col_back  $col_back  $col_gray  $col_gray  $col_gray
-client.background		    $col_back
+client.focused			    $col_pink  $col_back  $col_pink  $col_urgn  $col_pink
+client.focused_inactive		$col_gray  $col_back  $col_gray  $col_gray  $col_gray
+client.unfocused		    $col_gray  $col_back  $col_gray  $col_gray  $col_gray
+client.background		    $col_gray

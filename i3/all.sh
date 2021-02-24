@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Made by Joshua Smith: jsmithfpv@disroot.org
+# Made by photosheep (github.com/photosheep)
 
 # This autoexec is paired with a regular i3 env.
 # Included would be system-agnostic configs, e.g.

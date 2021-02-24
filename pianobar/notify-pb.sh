@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MIT license.
-# Author : Joshua Smith
+# Author : photosheep (github.com/photosheep)
 
 # Usage : place anywhere, reference full path with event_command = /home/$USER/.config/pianobar/notify-pb.sh
 # inside of the pianobar config.

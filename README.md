@@ -13,6 +13,6 @@ Tested on thinkpad T550, X260 and an asrock X399M w/ 2970WX. Some configs are sp
 **Photography:** rawtherapee, GIMP, graphicsmagick, xf86-input-wacom, rsync
 
 #### Notes
-Very little is implicitly integrated, and I've attempted to make the config as modular as possible. Most non-desktop things aren't required, and are just preferences of mine.
+Very little is explicitly integrated, and I've attempted to make the config as modular as possible. Most non-desktop things aren't required, and are just preferences of mine.
 
 rime-cantonese only needs to be installed and ibus launched, it copies files to your config and populates a build list there.

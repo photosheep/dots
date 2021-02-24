@@ -1,0 +1,73 @@
+# Default config for imv
+
+[options]
+
+# Suppress built-in key bindings, and specify them explicitly in this
+# config file.
+suppress_default_binds = true
+
+overlay = true
+overlay_position_bottom = true
+overlay_font = Hack:20
+overlay_text="${imv_current_file} [${imv_width}x${imv_height}@$imv_scale%]"
+
+[aliases]
+# Define aliases here. Any arguments passed to an alias are appended to the
+# command.
+# alias = command to run
+
+[binds]
+# Define some key bindings
+q = quit
+
+# Image navigation
+<Left> = prev
+<bracketleft> = prev
+<Right> = next
+<bracketright> = next
+gg = goto 1
+<Shift+G> = goto -1
+
+# Panning
+j = pan 0 -50
+k = pan 0 50
+h = pan 50 0
+l = pan -50 0
+J = pan 0 -100
+K = pan 0 100
+H = pan 100 0
+L = pan -100 0
+
+# Zooming
+<Up> = zoom 1
+<Shift+plus> = zoom 1
+i = zoom 1
+<Down> = zoom -1
+<minus> = zoom -1
+o = zoom -1
+
+# Exif notify
+e = exec ~/.scripts/exif-notify.sh $imv_current_file
+
+# Background swap.
+<bracketleft> = background #ffffff
+<bracketright> = background #000000
+
+# Rotate Clockwise by 90 degrees
+<Ctrl+r> = rotate by 90
+
+# Other commands
+f = fullscreen
+d = overlay
+c = center
+s = scaling next
+a = zoom actual
+r = reset
+
+# Gif playback
+<period> = next_frame
+<space> = toggle_playing
+
+# Slideshow control
+t = slideshow +1
+<Shift+T> = slideshow -1
