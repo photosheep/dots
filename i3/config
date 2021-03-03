@@ -112,8 +112,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -10
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86AudioRaiseVolume exec pamixer -i 10
 bindsym XF86AudioLowerVolume exec pamixer -d 10
-bindsym XF86AudioMute exec pamixer --sink 0 --toggle-mute
-bindsym XF86AudioMicMute exec pamixer --source 1 --toggle-mute
+bindsym XF86AudioMute exec pamixer --toggle-mute
+bindsym XF86AudioMicMute exec pamixer --default-source --toggle-mute
 
 bindsym $mod+g gaps inner all toggle $gapsize
 
