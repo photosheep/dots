@@ -11,16 +11,17 @@ tray-detached = left
 
 modules-left = battery1 battery2 cpu temp memory network i3mode
 modules-center = i3
-modules-right = volume time ibus
+modules-right = volume time ibus dunst
 
 module-margin-left = 0
 module-margin-right = 0
 
-separator =
-
 font-0 = Hack:size=10;3
 font-1 = SauceCodePro Nerd Font Mono:size=12;4
 font-2 = Source Han Sans CN:weight=bold:size=12;3
+
+# Remote control
+enable-ipc = true
 
 [module/i3]
 type=internal/i3
@@ -79,26 +80,28 @@ format = %{A1:termite --role=termfloat --exec='btm -C /home/josh/.config/bottom/
 ;format-background = #2e2e2e
 format-overline = #1e1e1e
 ;format-underline = #1e1e1e
-format-padding = 2
-label = "﬙ "
+format-padding = 1
+label = "﬙"
 
 ramp-coreload-spacing = 0
-ramp-coreload-0 = ▁
+ramp-coreload-0 = " "
 ramp-coreload-0-foreground = #e8e8e8
-ramp-coreload-1 = ▂
+ramp-coreload-1 = ▁
 ramp-coreload-1-foreground = #e8e8e8
-ramp-coreload-2 = ▃
+ramp-coreload-2 = ▂
 ramp-coreload-2-foreground = #e8e8e8
-ramp-coreload-3 = ▄
+ramp-coreload-3 = ▃
 ramp-coreload-3-foreground = #e8e8e8
-ramp-coreload-4 = ▅
+ramp-coreload-4 = ▄
 ramp-coreload-4-foreground = #e8e8e8
-ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = #ff50a6
-ramp-coreload-6 = ▇
+ramp-coreload-5 = ▅
+ramp-coreload-5-foreground = #e8e8e8
+ramp-coreload-6 = ▆
 ramp-coreload-6-foreground = #ff50a6
-ramp-coreload-7 = █
+ramp-coreload-7 = ▇
 ramp-coreload-7-foreground = #ff50a6
+ramp-coreload-8 = █
+ramp-coreload-8-foreground = #ff50a6
 
 [module/memory]
 type = internal/memory
@@ -108,25 +111,8 @@ format = <label>
 ;format-background = #2e2e2e
 format-overline = #1e1e1e
 ;format-underline = #1e1e1e
-format-padding = 2
+format-padding = 1
 label =  %gb_used%
-
-ramp-used-0 = ▁
-ramp-used-0-foreground = #e8e8e8
-ramp-used-1 = ▂
-ramp-used-1-foreground = #e8e8e8
-ramp-used-2 = ▃
-ramp-used-2-foreground = #e8e8e8
-ramp-used-3 = ▄
-ramp-used-3-foreground = #e8e8e8
-ramp-used-4 = ▅
-ramp-used-4-foreground = #e8e8e8
-ramp-used-5 = ▆
-ramp-used-5-foreground = #ff50a6
-ramp-used-6 = ▇
-ramp-used-6-foreground = #ff50a6
-ramp-used-7 = █
-ramp-used-7-foreground = #ff50a6
 
 [module/battery1]
 type = internal/battery
@@ -189,14 +175,14 @@ format = <label>
 ;format-background = #2e2e2e
 format-overline = #1e1e1e
 ;format-underline = #1e1e1e
-format-padding = 2
+format-padding = 1
 
 format-warn = <label-warn>
 ;format-warn-background = #2e2e2e
 label-warn-foreground = #ff0000
 format-warn-overline = #1e1e1e
 ;format-warn-underline = #1e1e1e
-format-warn-padding = 2
+format-warn-padding = 1
 
 label =  %temperature-c%°
 label-warn =  %temperature-c%°
@@ -210,9 +196,9 @@ format = <label>
 ;format-background = #2e2e2e
 format-overline = #1e1e1e
 ;format-underline = #1e1e1e
-format-padding = 2
+format-padding = 1
 
-#click-left = $XDG_CONFIG_HOME/polybar/cal_notify &
+click-left = $XDG_CONFIG_HOME/polybar/cal_notify &
 
 [module/network]
 type = internal/network
@@ -221,14 +207,16 @@ interval = 5
 ;format-connected-background = #2e2e2e
 format-connected-overline = #1e1e1e
 ;format-connected-underline = #1e1e1e
-format-connected-padding = 2
+format-connected-padding = 1
 ;format-disconnected-background = #2e2e2e
 format-disconnected-overline = #1e1e1e
 ;format-disconnected-underline = #1e1e1e
-format-disconnected-padding = 2
+format-disconnected-padding = 1
 
-label-connected = %{A1:/usr/bin/termite --role=termfloat --exec=nmtui:} %upspeed:0:9%  %downspeed:0:9%%{A}
-label-disconnected = %{A1:/usr/bin/termite --role=termfloat --exec=nmtui:} %upspeed:0:9%  %downspeed:0:9%%{A}
+#label-connected = %{A1:/usr/bin/termite --role=termfloat --exec=nmtui:} %downspeed:0:9%%  %upspeed:0:9%%{A}
+#label-disconnected = %{A1:/usr/bin/termite --role=termfloat --exec=nmtui:} %downspeed:0:9%  %upspeed:0:9%%{A}
+label-connected =  %downspeed:0:9%  %upspeed:0:9%
+label-disconnected =  %downspeed:0:9%  %upspeed:0:9%
 
 [module/volume]
 type = internal/pulseaudio
@@ -242,19 +230,19 @@ use-ui-max = false
 ;format-volume-background = #2e2e2e
 format-volume-overline = #1e1e1e
 ;format-volume-underline = #1e1e1e
-format-volume-padding = 2
+format-volume-padding = 1
 
 ;format-muted-background = #2e2e2e
 format-muted-overline = #1e1e1e
 ;format-muted-underline = #1e1e1e
-format-muted-padding = 2
+format-muted-padding = 1
 
 ramp-volume-0 = 奔
 ramp-volume-1 = 墳
 
-[module/ibus]
+[module/dunst]
 type = custom/script
-exec = ibus engine | sed 's/.*eng.*/英文/;s/rime/廣東話/;'
+exec = dunstctl is-paused | sed 's/.*false.*//;s/.*true.*//'
 interval = 1
 
 format = <label>
@@ -263,6 +251,19 @@ format-overline = #1e1e1e
 ;format-underline = #1e1e1e
 format-padding = 1
 
-click-left = $XDG_CONFIG_HOME/ibus_toggle.sh &
+click-left = dunstctl set-paused false
+
+[module/ibus]
+type = custom/ipc
+hook-0 = $XDG_CONFIG_HOME/i3/ibus_toggle.sh print &
+initial = 1
+
+format = <output>
+;format-background = #2e2e2e
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 1
+
+click-left = $XDG_CONFIG_HOME/i3/ibus_toggle.sh &
 
 ; vim:ft=dosini

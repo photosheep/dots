@@ -22,7 +22,7 @@ set $clip rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{
 set $files pcmanfm
 set $capture ~/.config/i3/screenshot.sh
 set $lock xsecurelock
-set $lang ~/.config/ibus_toggle.sh
+set $lang ~/.config/i3/ibus_toggle.sh
 
 # Workspace settings
 set $ws1 1:一
@@ -97,6 +97,7 @@ bindsym $mod+a focus parent
 bindsym $mod+bracketleft exec dunstctl close
 bindsym $mod+Shift+bracketleft exec dunstctl close-all
 bindsym $mod+bracketright exec dunstctl history-pop
+bindsym $mod+Shift+bracketright exec dunstctl action
 bindsym $mod+backslash exec dunstctl set-paused toggle
 bindsym $mod+Shift+Return exec dunstctl action
 

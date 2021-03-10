@@ -1,0 +1,6 @@
+#!/bin/bash
+
+calfile=mktemp
+when w | sed -r 's/.*[ \t]{3,}//' > $calfile
+notify-send -t 6000 "Weekly Calendar" "$(cat $calfile)"
+rm $calfile
