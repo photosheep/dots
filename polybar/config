@@ -198,7 +198,7 @@ format-overline = #1e1e1e
 ;format-underline = #1e1e1e
 format-padding = 1
 
-click-left = $XDG_CONFIG_HOME/polybar/cal_notify &
+click-left = $XDG_CONFIG_HOME/polybar/cal_notify
 
 [module/network]
 type = internal/network
@@ -255,7 +255,7 @@ click-left = dunstctl set-paused false
 
 [module/ibus]
 type = custom/ipc
-hook-0 = $XDG_CONFIG_HOME/i3/ibus_toggle.sh print &
+hook-0 = $XDG_CONFIG_HOME/i3/ibus_toggle.sh print
 initial = 1
 
 format = <output>
@@ -264,6 +264,6 @@ format-overline = #1e1e1e
 ;format-underline = #1e1e1e
 format-padding = 1
 
-click-left = $XDG_CONFIG_HOME/i3/ibus_toggle.sh &
+click-left = $XDG_CONFIG_HOME/i3/ibus_toggle.sh
 
 ; vim:ft=dosini
