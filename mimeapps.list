@@ -15,3 +15,5 @@ image/jpeg=imv.desktop
 image/png=imv.desktop
 image/gif=imv.desktop
 image/svg+xml=imv.desktop
+image/tiff=imv.desktop
+application/pdf=org.pwmt.zathura.desktop

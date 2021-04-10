@@ -85,8 +85,19 @@ let g:airline_mode_map = {
     \ '^V'     : 'V',
     \ }
 
-match Todo /\s\+$/
-autocmd BufWritePre * :%s/\s\+$//e
+
+fun! StripTrailingWhitespace()
+    " Don't strip on these filetypes
+    if &ft =~ 'markdown'
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
+autocmd BufWritePre * call StripTrailingWhitespace()
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Disable EX
 nnoremap Q <nop>
@@ -103,6 +114,12 @@ ino <leader>o o<Esc>Vc
 map <leader>cp "+p
 ino <leader>cp <Esc>"+p
 map <leader>cy "+y
+
+" Insert date for personal blog and other stuff.
+map <F5> "=strftime("%F %R:00 %z")<CR>
+ino <F5> <C-R>=strftime("%F %R:00 %z")<CR>
+map <F6> "=strftime("%F")<CR>
+ino <F6> <C-R>=strftime("%F")<CR>
 
 " Tab functionality.
 map <leader>te :tabedit<Space>

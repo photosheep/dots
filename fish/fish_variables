@@ -3,11 +3,13 @@
 SETUVAR --export ANDROID_SDK_HOME:/home/josh/\x2econfig/android
 SETUVAR --export BROWSER:firefox
 SETUVAR --export CRAWL_DIR:/home/josh/\x2elocal/share/crawl
+SETUVAR --export DIFFPROG:/bin/nvim\x20\x2dd
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f
 SETUVAR --export GNUPGHOME:/home/josh/\x2elocal/share/gnupg
 SETUVAR --export GTK2_RC_FILES:/home/josh/\x2econfig/gtk2/gtkrc
 SETUVAR --export GTK_IM_MODULE:ibus
+SETUVAR --export LEDGER_FILE:/home/josh/Docs/finances\x2eledger
 SETUVAR --export LESSHISTFILE:\x2d
 SETUVAR --export LIBVA_DRIVER_NAME:iHD
 SETUVAR --export PASSWORD_STORE_CLIP_TIME:15

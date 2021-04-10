@@ -1,0 +1,26 @@
+# Setting basic input colors.
+color "type=MODE fg=MAGENTA bg=DEFAULT_COLOR bold=1"
+color "type=HEADINGS fg=BLACK bg=BLUE bold=0"
+color "type=CELL_CONTENT fg=BLUE bg=DEFAULT_COLOR bold=1"
+color "type=CELL_ID fg=BLUE bg=DEFAULT_COLOR"
+color "type=CELL_FORMAT fg=MAGENTA bg=DEFAULT_COLOR"
+
+# Selection colors.
+color "type=CELL_SELECTION fg=MAGENTA bg=BLACK standout=1 bold=1"
+color "type=CELL_SELECTION_SC fg=MAGENTA bg=BLACK standout=1 bold=1"
+
+# Default cell inputs.
+color "type=CELL_NEGATIVE fg=BLUE bg=DEFAULT_COLOR"
+color "type=STRG fg=BLUE bg=DEFAULT_COLOR bold=0"
+color "type=NUMB fg=CYAN bg=DEFAULT_COLOR bold=0"
+color "type=EXPRESSION fg=CYAN bg=DEFAULT_COLOR bold=0"
+color "type=NORMAL fg=CYAN bg=DEFAULT_COLOR bold=0"
+color "type=DATEF fg=RED bg=DEFAULT_COLOR bold=0"
+cellcolor "type=NORMAL"
+
+set overlap on
+set external_functions on
+
+# Leader key jank
+nmap ",," "/\"!!\"<cr>EbDA"
+nmap ",A" "E|<tab>a !!"

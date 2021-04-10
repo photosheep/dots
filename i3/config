@@ -76,7 +76,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit i
 bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen
 
-bindsym $mod+i exec $lang
+bindsym $mod+Shift+i exec $lang
 
 bindsym $mod+$dirL focus left
 bindsym $mod+$dirR focus right
@@ -116,7 +116,7 @@ bindsym XF86AudioLowerVolume exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer --toggle-mute
 bindsym XF86AudioMicMute exec pamixer --default-source --toggle-mute
 
-bindsym $mod+g gaps inner all toggle $gapsize
+bindsym $mod+g gaps inner current toggle $gapsize
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
@@ -172,6 +172,7 @@ workspace_auto_back_and_forth no
 
 title_align center
 smart_gaps inverse_outer
+smart_borders on
 default_border pixel 2px
 default_floating_border pixel 2px
 gaps inner $gapsize

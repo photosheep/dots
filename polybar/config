@@ -11,7 +11,7 @@ tray-detached = left
 
 modules-left = battery1 battery2 cpu temp memory network i3mode
 modules-center = i3
-modules-right = volume time ibus dunst
+modules-right = news volume time ibus dunst
 
 module-margin-left = 0
 module-margin-right = 0
@@ -199,6 +199,18 @@ format-overline = #1e1e1e
 format-padding = 1
 
 click-left = $XDG_CONFIG_HOME/polybar/cal_notify
+
+[module/news]
+type = custom/script
+exec = "newsboat -x print-unread | awk '/^[^a-zA-Z]/{printf " %s articles",$1}'"
+interval = 60
+
+format = <label>
+format-overline = #1e1e1e
+;format-underline = #1e1e1e
+format-padding = 1
+
+click-left = termite --exec='newsboat'
 
 [module/network]
 type = internal/network
