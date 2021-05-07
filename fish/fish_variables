@@ -18,9 +18,6 @@ SETUVAR --export PYLINTHOME:/home/josh/\x2ecache/pylint
 SETUVAR --export QT_IM_MODULE:ibus
 SETUVAR --export QT_QPA_PLATFORMTHEME:gtk2
 SETUVAR --export WGETRC:/home/josh/\x2econfig/wgetrc
-SETUVAR --export XDG_CACHE_HOME:/home/josh/\x2ecache
-SETUVAR --export XDG_CONFIG_HOME:/home/josh/\x2econfig
-SETUVAR --export XDG_DATA_HOME:/home/josh/\x2elocal/share
 SETUVAR --export XMODIFIERS:\x40im\x2dibus
 SETUVAR --export ZSTD_CLEVEL:19
 SETUVAR __fish_init_2_39_8:\x1d
