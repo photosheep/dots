@@ -1,0 +1,84 @@
+{
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "margin-top": 2,
+    "modules-left": ["battery#b0","battery#b1","cpu", "temperature", "memory"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["network","pulseaudio", "clock", "tray"],
+
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 30,
+        "format": "{: %Y-%m-%d  %H:%M}",
+    },
+    "cpu": {
+        "interval": 10,
+        "states": {
+            "heavy": 80,
+            "light": 40
+        },
+        "format": "{usage:2}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": " {total:0.2f} GiB"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC:3}°",
+    },
+    "battery#b0": {
+        "bat":"BAT0",
+        "interval":60,
+        "states": {
+            "good": 100,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#b1": {
+        "bat":"BAT1",
+        "interval":60,
+        "states": {
+            "good": 100,
+            "warning": 50,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{signalStrength:3}%",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "interval": 120,
+        "format": "{icon}{volume:3}%",
+        "format-muted": "婢 00%",
+        "format-icons": {
+            "default": ["奔", "墳"]
+        }
+    }
+}

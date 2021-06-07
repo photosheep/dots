@@ -1,0 +1,75 @@
+# Variables for binds.
+set {
+    $mod Mod4
+
+    $dirL h
+    $dirR l
+    $dirU k
+    $dirD j
+
+    $term footclient
+    $menu wofi --show run | xargs swaymsg exec --
+    $files pcmanfm
+    $lock waylock
+    $capture $XDG_CONFIG_HOME/sway/scripts/screenshot.sh
+
+}
+
+# Movement
+bindsym {
+    $mod+$dirL focus left
+    $mod+$dirR focus right
+    $mod+$dirU focus up
+    $mod+$dirD focus down
+
+    $mod+Shift+$dirL move left
+    $mod+Shift+$dirR move right
+    $mod+Shift+$dirU move up
+    $mod+Shift+$dirD move down
+}
+
+# Layout
+bindsym {
+    $mod+b splith
+    $mod+v splitv
+    $mod+w layout tabbed
+    $mod+e layout toggle split
+    $mod+a focus parent
+    $mod+f fullscreen
+    $mod+space focus mode_toggle
+    $mod+Shift+space floating toggle
+    $mod+Shift+q kill
+}
+
+# System
+bindsym {
+    XF86MonBrightnessDown exec light -U 10
+    XF86MonBrightnessUp exec light -A 10
+
+    XF86AudioRaiseVolume exec pamixer -i 10
+    XF86AudioLowerVolume exec pamixer -d 10
+    XF86AudioMute exec pamixer --toggle-mute
+    XF86AudioMicMute exec pamixer --default-source --toggle-mute
+}
+
+# Launch
+bindsym {
+    $mod+Return exec $term
+    $mod+o exec $files
+    $mod+d exec $menu
+    $mod+c exec $capture
+    $mod+BackSpace exec $lock
+}
+
+# Window manager.
+bindsym {
+    $mod+Shift+r reload
+    $mod+Mod1+r restart
+    $mod+F12 exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+}
+
+# Misc
+bindsym {
+}
+
+floating_modifier $mod

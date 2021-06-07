@@ -1,0 +1,9 @@
+# Custom i3 by photosheep (github.com/photosheep)
+# Started on May 7th, 2021 on Blodeuwedd.
+# Will be maintained as-needed.
+
+xwayland disable
+
+include /etc/sway/config.d/*
+include $XDG_CONFIG_HOME/sway/config.d/*
+include '$XDG_CONFIG_HOME/sway/config.d/hosts/`uname -n`'

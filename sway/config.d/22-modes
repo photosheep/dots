@@ -1,0 +1,38 @@
+set $mode_size "[SIZE]"
+set $mode_cont [CONTROL]
+
+mode "$mode_size" {
+    bindsym {
+        $dirL resize shrink width  20px
+        $dirD resize grow height   20px
+        $dirU resize shrink height 20px
+        $dirR resize grow width    20px
+        Left  resize shrink width  80px
+        Down  resize grow height   80px
+        Up    resize shrink height 80px
+        Right resize grow width    80px
+
+        bracketleft gaps inner all minus $gapsize
+        bracketright gaps inner all plus $gapsize
+        g gaps inner all toggle $gapsize
+
+        Return mode "default"
+        Escape mode "default"
+    }
+
+}
+
+#mode "$mode_cont" {
+#    bindsym $dirL exec pamixer -d 10
+#    bindsym $dirR exec pamixer -i 10
+#    bindsym m exec pamixer --sink 0 --toggle-mute
+#    bindsym $dirD exec xbacklight -10
+#    bindsym $dirU exec xbacklight +10
+#
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#
+#}
+
+bindsym $mod+r mode "$mode_size"
+#lindsym $mod+p mode "$mode_cont"

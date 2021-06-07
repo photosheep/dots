@@ -1,0 +1,79 @@
+* {
+    border: none;
+    border-radius: 48px;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Hack";
+    font-size: 14px;
+    min-height: 28px;
+}
+
+.modules-left, .modules-right {
+    padding: 0 12px;
+}
+
+window#waybar {
+    background-color: rgba(68,68,68,0.8);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.focused {
+    color: #ff69b4;
+}
+
+#workspaces button.urgent {
+    color: #ffff00;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode{
+    padding-left: 14px;
+    color: #ffffff;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ff0000;
+}
+
+#battery.good {
+    color: #5a9af8;
+}
+
+#battery.warning {
+    color: #f8b85a;
+}
+
+#cpu.heavy {
+    color: #ff0000;
+}
+
+#cpu.light {
+    color: #5a9af8;
+}
+
+
+#battery.critical:not(.charging) {
+    border-top: 2px solid rgba(255,0,0,1);
+}

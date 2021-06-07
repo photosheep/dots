@@ -1,0 +1,6 @@
+# Displays
+output eDP-1 resolution 1366x768 position 0,0
+
+# Theme stuff
+seat * xcursor_theme "Bibata-Modern-Turquise"
+set $GTK_THEME "Equilux-compact"

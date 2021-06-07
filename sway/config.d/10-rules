@@ -1,0 +1,30 @@
+# Custom i3 by photosheep (github.com/photosheep)
+# Started on May 7th, 2021 on Blodeuwedd.
+# Will be maintained as-needed.
+
+# System variables.
+set $gapsize 10
+
+font Hack 9
+seat * hide_cursor 6000
+
+# Focus behavior
+focus_wrapping no
+focus_follows_mouse no
+focus_on_window_activation smart
+
+title_align left
+default_border pixel 2px
+default_floating_border pixel 2px
+#floating_maximum_size 1200 x 600
+
+smart_gaps inverse_outer
+smart_borders on
+gaps inner $gapsize
+
+
+input {
+    type:touchpad events disabled
+    type:keyboard xkb_numlock enabled
+}
+
