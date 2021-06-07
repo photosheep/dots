@@ -18,9 +18,6 @@ SETUVAR --export PYLINTHOME:/home/josh/\x2ecache/pylint
 SETUVAR --export QT_IM_MODULE:ibus
 SETUVAR --export QT_QPA_PLATFORMTHEME:gtk2
 SETUVAR --export WGETRC:/home/josh/\x2econfig/wgetrc
-SETUVAR --export XDG_CACHE_HOME:/home/josh/\x2ecache
-SETUVAR --export XDG_CONFIG_HOME:/home/josh/\x2econfig
-SETUVAR --export XDG_DATA_HOME:/home/josh/\x2elocal/share
 SETUVAR --export XMODIFIERS:\x40im\x2dibus
 SETUVAR --export ZSTD_CLEVEL:19
 SETUVAR __fish_init_2_39_8:\x1d
@@ -56,5 +53,5 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/josh/\x2egem/ruby/2\x2e7\x2e0/bin
+SETUVAR fish_user_paths:/home/josh/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin
 SETUVAR grc_plugin_execs:acpi\x1ecat\x1ecvs\x1edf\x1ediff\x1edig\x1egcc\x1eg\x2b\x2b\x1eifconfig\x1emake\x1emount\x1emtr\x1enetstat\x1eping\x1eps\x1etail\x1etraceroute\x1ewdiff\x1eblkid\x1edu\x1ednf\x1edocker\x1edocker\x2dmachine\x1eenv\x1eid\x1eip\x1eiostat\x1elast\x1elsattr\x1elsblk\x1elspci\x1elsmod\x1elsof\x1elsusb\x1egetfacl\x1egetsebool\x1eulimit\x1euptime\x1enmap\x1efdisk\x1efindmnt\x1efree\x1esemanage\x1esar\x1ess\x1esysctl\x1esystemctl\x1estat\x1eshowmount\x1etcpdump\x1etune2fs\x1evmstat\x1ew\x1ewho

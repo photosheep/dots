@@ -21,6 +21,7 @@ set $menu rofi -show run
 set $clip rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
 set $files pcmanfm
 set $capture ~/.config/i3/screenshot.sh
+set $backlight ~/.config/i3/backlight.sh
 set $lock xsecurelock
 set $lang ~/.config/i3/ibus_toggle.sh
 
@@ -109,8 +110,8 @@ bindsym $mod+BackSpace exec $lock
 bindsym --release $mod+d exec $menu
 bindsym --release $mod+Shift+d exec $clip
 
-bindsym XF86MonBrightnessDown exec xbacklight -10
-bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86MonBrightnessDown exec $backlight 40 20
+bindsym XF86MonBrightnessUp exec $backlight 100 60
 bindsym XF86AudioRaiseVolume exec pamixer -i 10
 bindsym XF86AudioLowerVolume exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer --toggle-mute
